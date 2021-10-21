@@ -1,4 +1,4 @@
-module github.com/yemmyharry/chatty
+module github.com/yemmyharry/backend
 
 go 1.16
 
