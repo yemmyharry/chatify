@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/yemmyharry/chatty/pkg/websocket"
+	"github.com/yemmyharry/backend/pkg/websocket"
 	"net/http"
 
 
