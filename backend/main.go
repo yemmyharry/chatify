@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"github.com/joho/godotenv"
 	"github.com/yemmyharry/backend/pkg/websocket"
+	"log"
 	"net/http"
-
-
+	"os"
 )
 
 func serveWs(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
@@ -34,7 +35,17 @@ func setupRoutes() {
 }
 
 func main() {
-	fmt.Println("Distributed Chat App v0.01")
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	port := os.Getenv("PORT")
 	setupRoutes()
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Chat App Started at" + port)
+
+	http.ListenAndServe(":"+ port, nil)
+	fmt.Println("Chat App Started at " + port)
+
 }
