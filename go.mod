@@ -1,7 +1,8 @@
-module github.com/yemmyharry/backend
+module github.com/yemmyharry/chatify
 
 go 1.17
 
-require github.com/gorilla/websocket v1.4.2
-
-require github.com/joho/godotenv v1.4.0 // indirect
+require (
+	github.com/gorilla/websocket v1.4.2
+	github.com/joho/godotenv v1.4.0
+)
